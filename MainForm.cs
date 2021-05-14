@@ -13,21 +13,21 @@ namespace PicViewer
         private void openB_Click(object sender, EventArgs e)
         {
             if (openFileDialog.ShowDialog() == DialogResult.OK)
-                pictureBox1.Load(openFileDialog.FileName);
+                pictureBox.Load(openFileDialog.FileName);
         }
 
         private void clearB_Click(object sender, EventArgs e)
         {
-            pictureBox1.Image = null;
+            pictureBox.Image = null;
         }
 
         private void editB_Click(object sender, EventArgs e)
         {
-            if (pictureBox1.Image != null)
+            if (pictureBox.Image != null)
             {
-                Editor EF = new Editor(pictureBox1.Image);
+                Editor EF = new Editor(pictureBox.Image);
                 EF.ShowDialog();
-                pictureBox1.Image = EF.Image;
+                pictureBox.Image = EF.Image;
                 EF.Dispose();
             }
             else
@@ -44,9 +44,9 @@ namespace PicViewer
         private void stretchCB_CheckedChanged(object sender, EventArgs e)
         {
             if (stretchCB.Checked)
-                pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+                pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
             else
-                pictureBox1.SizeMode = PictureBoxSizeMode.Normal;
+                pictureBox.SizeMode = PictureBoxSizeMode.Normal;
         }
     }
 }
